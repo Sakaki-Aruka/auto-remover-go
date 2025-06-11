@@ -5,7 +5,6 @@ import (
 	"os"
 	"path/filepath"
 	"sort"
-	"time"
 )
 
 type Config struct {
@@ -13,10 +12,8 @@ type Config struct {
 	LoadDir    string
 }
 
-const day = time.Duration(24) * time.Hour
-
 func main() {
-	config := Config{FilesLimit: 21, LoadDir: "/home/aruka"}
+	config := Config{FilesLimit: 21, LoadDir: "."}
 	fmt.Println("config=", config)
 
 	current, err := filepath.Abs(config.LoadDir)
@@ -52,6 +49,7 @@ func main() {
 		for index, info := range targetFiles[21:] {
 			fmt.Println("index=", index, "name=", info.Name(), "info(ModTime)=", info.ModTime())
 		}
-
+	} else {
+		fmt.Println("Size of the specified dir files =", len(targetFiles))
 	}
 }
