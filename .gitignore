@@ -30,4 +30,6 @@ go.work
 # GoLand settings
 /.idea
 
+auto-remover-go
+
 # End of https://www.toptal.com/developers/gitignore/api/go
